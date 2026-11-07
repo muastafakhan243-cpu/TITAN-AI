@@ -1,0 +1,110 @@
+{
+  "bot_name": "TITAN AI",
+  "dry_run": true,
+  "dry_run_wallet": 2,
+  "trading_mode": "spot",
+  "margin_mode": "",
+  "max_open_trades": 1,
+  "stake_currency": "USDT",
+  "stake_amount": "unlimited",
+  "tradable_balance_ratio": 0.99,
+  "fiat_display_currency": "USD",
+  "timeframe": "5m",
+  "strategy": "TitanAI",
+  "process_only_new_candles": true,
+  "cancel_open_orders_on_exit": true,
+  "minimal_roi": {
+    "0": 0.04,
+    "60": 0.02,
+    "240": 0.01
+  },
+  "stoploss": -0.02,
+  "trailing_stop": true,
+  "trailing_stop_positive": 0.01,
+  "trailing_stop_positive_offset": 0.025,
+  "trailing_only_offset_is_reached": true,
+  "use_exit_signal": true,
+  "exit_profit_only": false,
+  "ignore_roi_if_entry_signal": false,
+  "position_adjustment_enable": false,
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+  "entry_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+  "exit_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+  "exchange": {
+    "name": "binance",
+    "key": "",
+    "secret": "",
+    "ccxt_config": {
+      "enableRateLimit": true,
+      "options": {
+        "defaultType": "spot"
+      }
+    },
+    "ccxt_async_config": {
+      "enableRateLimit": true,
+      "options": {
+        "defaultType": "spot"
+      }
+    },
+    "pair_whitelist": [
+      "BTC/USDT"
+    ],
+    "pair_blacklist": []
+  },
+  "pairlists": [
+    {
+      "method": "StaticPairList"
+    }
+  ],
+  "protections": [
+    {
+      "method": "CooldownPeriod",
+      "stop_duration_candles": 3
+    },
+    {
+      "method": "StoplossGuard",
+      "lookback_period_candles": 288,
+      "trade_limit": 3,
+      "stop_duration_candles": 288,
+      "required_profit": 0.0,
+      "only_per_pair": false
+    }
+  ],
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 8080,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "CORS_origins": [],
+    "username": "__API_USERNAME__",
+    "password": "__API_PASSWORD__",
+    "jwt_secret_key": "__API_JWT_SECRET__",
+    "ws_token": "__API_WS_TOKEN__"
+  },
+  "bot_loop_start": {
+    "process_throttle_secs": 5
+  },
+  "internals": {
+    "process_throttle_secs": 5
+  },
+  "logfile": "/freqtrade/user_data/logs/freqtrade.log",
+  "db_url": "sqlite:////freqtrade/user_data/tradesv3.sqlite",
+  "user_data_dir": "/freqtrade/user_data",
+  "initial_state": "running",
+  "force_entry_enable": false,
+  "verbose": false
+}

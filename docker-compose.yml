@@ -1,0 +1,13 @@
+services:
+  titan:
+    build: .
+    container_name: titan-ai
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./user_data:/freqtrade/user_data
+    command: ["trade", "--config", "/freqtrade/user_data/config.json", "--strategy", "TitanAI"]
+    stop_grace_period: 30s

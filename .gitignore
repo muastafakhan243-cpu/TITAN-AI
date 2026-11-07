@@ -1,0 +1,10 @@
+# Local dashboard credentials and generated runtime config
+.env
+user_data/config.json
+user_data/*.sqlite
+user_data/*.sqlite-shm
+user_data/*.sqlite-wal
+user_data/data/
+user_data/logs/
+__pycache__/
+*.py[cod]
